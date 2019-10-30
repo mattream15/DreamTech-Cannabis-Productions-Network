@@ -1,3 +1,5 @@
+WE ARE SAVED
+
 Project Requirements
 1. Build an MVC Sinatra Application - DONE
 2. Use ActiveRecord with Sinatra - DONE
