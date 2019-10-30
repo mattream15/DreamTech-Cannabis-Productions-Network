@@ -1,0 +1,14 @@
+<h1>Plant Your Seeds</h1>
+<form method="POST" action="/crop_productions">
+
+    <select name="user_id">
+        <% @users.each do |user| %>
+            <option value="<%= user.id%>"> <%= user.name %> </option>
+        <% end %>
+    </select>
+
+<h3>Crop: <input type="text" name="crop"></h3>
+<h3>Location: <input type="integer" name="allocated_location"></h3>
+<input type="submit">
+</form>
+

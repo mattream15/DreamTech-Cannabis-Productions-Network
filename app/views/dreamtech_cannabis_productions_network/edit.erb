@@ -1,0 +1,13 @@
+<h1>Edit Your Garden</h1>
+<form method="POST" action="/crop_productions/<%= @crop_production.id %>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+<select name="user_id">
+    <% @users.each do |user| %>
+        <option value="<%= user.id%>"> <%= user.name %> </option>
+    <% end %>
+</select>
+<h3>Crop: <input type="text" name="crop" value="@crop_production.crop"></h3>
+<h3>Location: <input type="integer" name="allocated_location" value="@crop_production.allocated_location"></h3>
+<input type="submit">
+</form>

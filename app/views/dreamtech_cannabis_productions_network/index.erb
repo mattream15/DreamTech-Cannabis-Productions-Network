@@ -1,0 +1,5 @@
+<h1>Here are all of your farming plots</h1>
+
+<% @crop_productions.each do |crop_production| %>
+    <h2><a href="crop_productions/<%=crop_production.id%>"><%= crop_production.name %></a></h2>
+<% end%>
