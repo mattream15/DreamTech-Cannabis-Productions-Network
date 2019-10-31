@@ -9,5 +9,5 @@ ActiveRecord::Base.establish_connection(
 )
 
 require './app/controllers/application_controller'
-require './app/models/crop_production'
+require './app/models/dreamtech_cannabis_productions_network'
 require_all 'app'

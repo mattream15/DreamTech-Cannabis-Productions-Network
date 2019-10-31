@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         user = User.new(params)
         if @user.save
             session[:user_id] = @user.id
-            redirect "/crop_productions"
+            redirect "/dreamtech_cannabis_productions_network"
         else
             redirect "/users/signup"
         end
