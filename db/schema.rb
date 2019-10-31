@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191031000935) do
+ActiveRecord::Schema.define(version: 20191031183308) do
 
   create_table "cannabis_plants", force: :cascade do |t|
     t.string  "cannabis_species"

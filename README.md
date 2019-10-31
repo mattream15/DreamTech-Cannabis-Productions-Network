@@ -22,7 +22,7 @@ MVC Sinatra Application
 Users(producers)
 
 **user information
-	-producer_name
+	-name
 	-email
 	-address
 
@@ -35,11 +35,11 @@ has_many :networks, through :dreamtech_cannabis_productions_networks
 DreamTech Cannabis Productions Network
 
 **production information
-	-producer_name
-	-cannabis_plant_seeds_purchased
 	-cannabis species
 	-variety_name
+	-cannabis_plant_seeds_purchased
 	-grow_rooms
+	-user_id
 
 **relationships
 	belongs_to :users
@@ -93,7 +93,7 @@ Cannabis Plant
 	belongs_to: users, through :dreamtech_cannabis_productions_networks
 	belongs_to: grow room
 
-Network
+Production Network
 
 **product to be sold
 	-type of product(drop down - flower, leaves, stalks, roots)

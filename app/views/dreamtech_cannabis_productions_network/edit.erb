@@ -1,5 +1,5 @@
-<h1>Edit Your Garden</h1>
-<form method="POST" action="/crop_productions/<%= @crop_production.id %>">
+<h1>Edit Your Cannabis Plant</h1>
+<form method="POST" action="/dreamtech_cannabis_productions_networks/<%= @dreamtech_cannabis_productions_network.id %>">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
 
 <select name="user_id">
@@ -7,7 +7,6 @@
         <option value="<%= user.id%>"> <%= user.name %> </option>
     <% end %>
 </select>
-<h3>Crop: <input type="text" name="crop" value="@crop_production.crop"></h3>
-<h3>Location: <input type="integer" name="allocated_location" value="@crop_production.allocated_location"></h3>
+<h3>Cannabis ID: <input type="text" name="cannabis_id" value="@dreamtech_cannabis_productions_network.cannabis_id"></h3>
 <input type="submit">
 </form>

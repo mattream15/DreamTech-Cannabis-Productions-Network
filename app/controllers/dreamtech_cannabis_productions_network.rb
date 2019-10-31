@@ -1,4 +1,4 @@
-class DreamTech_Cannabis_Productions_NetworkController < ApplicationController
+class DreamTechCannabisProductionsNetworkController < ApplicationController
 
     get '/dreamtech_cannabis_productions_network' do
         if logged_in?

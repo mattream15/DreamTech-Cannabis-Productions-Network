@@ -1,8 +1,8 @@
 class DreamTech_Cannabis_Productions_Network < ActiveRecord::Base
     belongs_to :user
-    belongs_to :grow_rooms
-    has_many :cannabis_plants #, through: :grow_rooms
-    has_many :production_networks #, through: :cannabis_plants
+    has_and_belongs_to_many :grow_rooms
+    has_one :cannabis_plants, through: :grow_rooms
+    has_one :production_networks, through: :cannabis_plants
 
     validates :user_id, presence: true
     validates :cannabis_id, presence: true
