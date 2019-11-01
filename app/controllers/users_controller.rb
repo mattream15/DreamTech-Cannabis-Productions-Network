@@ -12,5 +12,6 @@ class UsersController < ApplicationController
         else
             redirect "/users/signup"
         end
+        #go to homepage
     end
 end
