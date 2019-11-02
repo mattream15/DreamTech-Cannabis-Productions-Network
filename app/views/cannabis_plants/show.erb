@@ -1,0 +1,9 @@
+<h1>Cannabis Plant Information for <%= @cannabis_plant.user_id %>:</h1>
+<h3>Name: <%= @cannabis_plant.user_id %></h3>
+<h3>Cannabis Plant ID: <%= @cannabis_plant.cannabis_plant_id %></h3>
+
+<h2>Would you like to delete this cannabis plant?</h2>
+<form method="POST" action="/ cannabis_plants/<%=@cannabis_plant.id%>">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete">
+</form>

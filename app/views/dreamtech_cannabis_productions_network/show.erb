@@ -1,9 +1,0 @@
-<h1>Cannabis Production Information for <%= @dreamtech_cannabis_productions_network.user_id %>:</h1>
-<h3>Name: <%= @dreamtech_cannabis_productions_network.user_id %></h3>
-<h3>Cannabis ID: <%= @dreamtech_cannabis_productions_network.cannabis_id %></h3>
-
-<h2>Would you like to delete this cannabis plant?</h2>
-<form method="POST" action="/dreamtech_cannabis_productions_networks/<%=@dreamtech_cannabis_productions_network.id%>">
-    <input type="hidden" id="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete">
-</form>

@@ -1,0 +1,9 @@
+<h1>Grow Room Information for <%= @grow_room.user_id %>:</h1>
+<h3>Name: <%= @grow_room.user_id %></h3>
+<h3>Grow Room ID: <%= @grow_room.grow_room_id %></h3>
+
+<h2>Would you like to delete this grow room?</h2>
+<form method="POST" action="/grow_rooms/<%=@grow_room.id%>">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete">
+</form>

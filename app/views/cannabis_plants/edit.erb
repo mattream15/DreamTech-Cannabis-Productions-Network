@@ -1,0 +1,12 @@
+<h1>Edit Your Cannabis Plant</h1>
+<form method="POST" action="/cannabis_plants/<%= @cannabis_plant.id %>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+<select name="user_id">
+    <% @users.each do |user| %>
+        <option value="<%= user.id%>"> <%= user.name %> </option>
+    <% end %>
+</select>
+<h3>Cannabis Plant ID: <input type="text" name="cannabis_plant_id" value="@cannabis_plant.cannabis_plant_id"></h3>
+<input type="submit">
+</form>

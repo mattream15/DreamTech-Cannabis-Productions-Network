@@ -5,7 +5,8 @@ if ActiveRecord::Migrator.needs_migration?
 end
 use Rack::MethodOverride
 run ApplicationController
-use DreamTechCannabisProductionsNetworkController
+use GrowRoomsController
+use CannabisPlantsController
 use SessionsController
 use UsersController
 
