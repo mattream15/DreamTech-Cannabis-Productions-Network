@@ -14,11 +14,10 @@
 ActiveRecord::Schema.define(version: 20191031232030) do
 
   create_table "cannabis_plants", force: :cascade do |t|
-    t.string  "cannabis_species"
-    t.string  "variety_name"
+    t.string  "strain"
+    t.integer "number_of_cannabis_seeds"
     t.string  "soil_type"
     t.string  "nutrients"
-    t.integer "weight_of_flower_produced"
     t.integer "user_id"
   end
 

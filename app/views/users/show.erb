@@ -1,0 +1,23 @@
+<html>
+<center><h1>DreamTech</h1></center>
+<center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
+<br>
+<body>
+<br>
+<h3>Hello <%= @user.name %>!</h3>
+<br>
+<p>Whether you are are seeking to improve the quality or quantity of your cannabis growth, we have you covered.</p>
+<p>From planting your cannabis seeds to tending them through harvest, DreamTech offers 24/7 botanical care with our state of the art cannabis production and processing equipment to ensure maximum results.</p>
+<p>With our customizable production model, you have as much control as you would like in the planting, tending, and harvesting processes to produce the cannabis of your dreams, all at the convenience of our website!</p>
+<br>
+</body>
+<div>
+<p>To get started, simply <a href="/cannabis_plants/new">click here to select the cannabis seeds</a> that you would like to grow!</p>
+</div>
+<br>
+<p>Would you like to delete your user account? This cannot be undone.</p>
+<form method="POST" action="/users/<%=@user.id%>">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete My Account">
+</form>
+</html>

@@ -1,12 +1,37 @@
-<h1>Plant Your Cannabis Seeds</h1>
+<html>
+<center><h1>DreamTech</h1></center>
+<center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
+<br>
+<body>
+<br>
+<h3>Select Your Cannabis Seeds</h3>
+</body>
 <form method="POST" action="/cannabis_plants">
 
-    <select name="user_id">
+    <label>Name: </label><select name="user_id">
         <% @users.each do |user| %>
             <option value="<%= user.id%>"> <%= user.name %> </option>
         <% end %>
     </select>
-
-<h3>Cannabis Plant ID: <input type="text" name="cannabis_plant_id"></h3>
+<br>
+<br>
+    <label>Strain: </label><select name="strain">
+        <option value="1">Cannabis indica - "Strawberry Banana"</option>
+        <option value="2">Cannabis indica - "Dark Star"</option>
+        <option value="3">Cannabis indica - "Kosher Kush"</option>
+        <option value="4">Cannabis indica - "Sunset Sherbert"</option>
+        <option value="5">Cannabis indica - "Purple Kush"</option>
+        <option value="6">Cannabis sativa - "Ghost Train Haze"</option>
+        <option value="7">Cannabis sativa - "Maui Wowie"</option>
+        <option value="8">Cannabis sativa - "Sour Diesel"</option>
+        <option value="9">Cannabis sativa - "Blue Dream"</option>
+        <option value="10">Cannabis sativa - "Casey Jones"</option>
+    </select>
+<br>
+<br>
+    <label>Number of Seeds: </label><input type="text" name="number_of_cannabis_seeds"><br />
+    <br>
+    <br>
 <input type="submit">
 </form>
+</html>

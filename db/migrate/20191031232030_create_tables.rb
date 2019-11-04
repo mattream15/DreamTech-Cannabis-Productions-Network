@@ -13,11 +13,10 @@ class CreateTables < ActiveRecord::Migration
     end
   
     create_table :cannabis_plants do |t|
-        t.string :cannabis_species
-        t.string :variety_name
+        t.string :strain
+        t.integer :number_of_cannabis_seeds
         t.string :soil_type
         t.string :nutrients
-        t.integer :weight_of_flower_produced
         t.integer :user_id
     end
 
