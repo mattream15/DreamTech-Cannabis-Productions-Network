@@ -4,11 +4,22 @@
 <br>
 <body>
 <br>
-<h3>Cannabis Plant Information for <%= @cannabis_plant.strain %>:</h3>
-<h3>Number of Seeds: <%= @cannabis_plant.number_of_cannabis_seeds %></h3>
+<h4>Selected Cannabis Species and Variety Name: "<%= @cannabis_plant.strain %>"</h4>
+<br>
+<h4>Number of Cannabis Seeds: <%= @cannabis_plant.number_of_cannabis_seeds %></h4>
+<br>
+<h4>Selected Soil Type: "<%= @cannabis_plant.soil_type %>"</h4>
+<br>
+<h4>Selected Nutrients: "<%= @cannabis_plant.nutrients %>"</h4>
+<br>
 </body>
+<br>
 <div>
-<p>Would you like to delete this cannabis plant?</p>
+<p>To create your growing environment, simply <a href="/grow_rooms/new">click here to select the growing room</a> that you would like use to produce your cannabis!</p>
+</div>
+<br>
+<div>
+<p>Would you like to delete this/these cannabis plant(s)?</p>
 <div>
 <form method="POST" action="/ cannabis_plants/<%=@cannabis_plant.id%>">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
