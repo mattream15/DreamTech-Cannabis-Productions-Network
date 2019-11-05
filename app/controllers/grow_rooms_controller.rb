@@ -10,8 +10,12 @@ class GrowRoomsController < ApplicationController
     end
 
     get '/grow_rooms/new' do
-        @users = User.all
-        erb :"grow_rooms/new"
+        if current_user.id
+            @grow_rooms = GrowRoom.all
+            erb :"grow_rooms/new"
+        else
+            redirect "/login"
+        end
     end
 
     get '/grow_rooms/:id/edit' do
@@ -41,7 +45,7 @@ class GrowRoomsController < ApplicationController
     end
 
     post '/grow_rooms' do
-        grow_room = GrowRoom.new(params)
+        grow_room =  current_user.grow_rooms.build(params)
             if grow_room.save
                 redirect "/grow_rooms/#{grow_room.id}"
             else

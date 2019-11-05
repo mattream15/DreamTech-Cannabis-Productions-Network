@@ -2,21 +2,19 @@
 <center><h1>DreamTech</h1></center>
 <center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
 <br>
-<body>
 <br>
+<body>
 <h3>Create Your Grow Groom</h3>
+<br>
+<br>
 </body>
 <form method="POST" action="/grow_rooms">
 
-    <label>Name: </label><select name="user_id">
-        <% @users.each do |user| %>
-            <option value="<%= user.id%>"> <%= user.name %> </option>
-        <% end %>
-    </select>
+    <label>Name: <%= current_user.name %></label>
 <br>
 <br>
-    <label>Name of Grow Room: </label><input type="text" name="name"><br />
-<br> 
+    <label>Name of Grow Room: </label><input type="text" name="name">
+<br>
 <br>   
     <label>Light Source: </label><select name="type_of_light">
         <option value="Fluorescent">Fluorescent</option>

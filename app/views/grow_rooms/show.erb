@@ -3,20 +3,20 @@
 <center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
 <br>
 <body>
-<h4>Grow Room Name: <%= @grow_room.name %></h4>
+<h4>Your Newest Grow Room:</h4>
 <br>
-<h4>Selected Grow Room Light Source: <%= @grow_room.type_of_light %></h4>
-<br>
-<h4>Room Temperature: <%= @grow_room.room_temperature %> degrees Fahrenheit</h4>
-<br>
-<h4>Selected Soil Type: <%= @grow_room.relative_humidity %></h4>
+<h5>Grow Room Name: <%= @grow_room.name %></h5>
+<h5>Selected Grow Room Light Source: <%= @grow_room.type_of_light %></h5>
+<h5>Room Temperature: <%= @grow_room.room_temperature %> degrees Fahrenheit</h5>
+<h5>Selected Soil Type: <%= @grow_room.relative_humidity %></h5>
 </body>
 <br>
 <br>
 <div>
-<p>Final Step: To check on your cannabis plant(s) and growing room(s), simply <a href="/users/<%=@grow_room.user.id%>/garden">click here to view your cannabis production</a> with DreamTech!</p>
-</div>
+<h4>Final Step:</h4>
 <br>
+ <p>To check on your cannabis plant(s) and growing room(s), simply <a href="/users/<%=@grow_room.user.id%>/garden">click here to view your cannabis production</a> with DreamTech!</p>
+</div>
 <br>
 <div>
 <p>Would you like to build another grow room? <a href="/grow_rooms/new">Click here to select the growing room</a> that you would like use to produce your cannabis!</p>

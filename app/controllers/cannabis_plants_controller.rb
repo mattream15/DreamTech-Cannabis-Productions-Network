@@ -10,9 +10,12 @@ class CannabisPlantsController < ApplicationController
     end
 
     get '/cannabis_plants/new' do
-        @users = User.all
-        @cannabis_plants = CannabisPlant.all
-        erb :"cannabis_plants/new"
+        if current_user.id
+            @cannabis_plants = CannabisPlant.all
+            erb :"cannabis_plants/new"
+        else
+            redirect "/login"
+        end
     end
 
     get '/cannabis_plants/:id/edit' do
@@ -42,7 +45,7 @@ class CannabisPlantsController < ApplicationController
     end
 
     post '/cannabis_plants' do
-        cannabis_plant = CannabisPlant.new(params)
+        cannabis_plant =  current_user.cannabis_plants.build(params)
             if cannabis_plant.save
                 redirect "/cannabis_plants/#{cannabis_plant.id}"
             else

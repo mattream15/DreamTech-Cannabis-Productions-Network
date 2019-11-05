@@ -2,25 +2,26 @@
 <center><h1>DreamTech</h1></center>
 <center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
 <br>
+<br>
 <body>
-<h4>Selected Cannabis Species and Variety Name: "<%= @cannabis_plant.strain %>"</h4>
-<br>
-<h4>Number of Cannabis Seeds: <%= @cannabis_plant.number_of_cannabis_seeds %></h4>
-<br>
-<h4>Selected Soil Type: "<%= @cannabis_plant.soil_type %>"</h4>
-<br>
-<h4>Selected Nutrients: "<%= @cannabis_plant.nutrients %>"</h4>
+<h4>Your Newest Cannabis Plant(s)</h4>
+    <br>
+<h5>Selected Cannabis Species and Variety Name: "<%= @cannabis_plant.strain %>"</h5>
+<h5>Number of Cannabis Seeds: <%= @cannabis_plant.number_of_cannabis_seeds %></h5>
+<h5>Selected Soil Type: "<%= @cannabis_plant.soil_type %>"</h5>
+<h5>Selected Nutrients: "<%= @cannabis_plant.nutrients %>"</h5>
 </body>
 <br>
 <br>
 <div>
-<p>Next Step: To create your growing environment, simply <a href="/grow_rooms/new">click here to select the growing room</a> that you would like use to produce your cannabis!</p>
+<h4>Next Steps:</h4>
+<br>
+<p>To create your growing environment, simply <a href="/grow_rooms/new">click here to select the growing room</a> that you would like use to produce your cannabis!</p>
 </div>
 <br>
 <div>
     <p>Would you like to plant more cannabis? <a href="/cannabis_plants/new">Click here to select the cannabis seeds</a> that you would like to grow!</p>
 </div>
-<br>
 <br>
 <div>
 <p>To see your existing cannabis plant(s) and/or growing room(s), <a href="/users/<%=@cannabis_plant.user.id%>/garden">click here to view your cannabis production</a> with DreamTech!</p>
