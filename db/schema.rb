@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 20191031232030) do
 
   create_table "grow_rooms", force: :cascade do |t|
     t.string  "name"
+    t.string  "type_of_light"
+    t.integer "room_temperature"
+    t.integer "relative_humidity"
     t.integer "user_id"
   end
 
   create_table "grow_rooms_cannabis_plants", force: :cascade do |t|
-    t.string  "type_of_light"
-    t.integer "room_temperature"
-    t.integer "relative_humidity"
     t.integer "grow_room_id"
     t.integer "cannabis_plant_id"
   end

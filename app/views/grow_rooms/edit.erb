@@ -1,12 +1,56 @@
-<h1>Edit Your Cannabis Plant</h1>
+<html>
+    <center><h1>DreamTech</h1></center>
+    <center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
+    <br>
+<h4>Edit Your Grow Room</h4>
+<br>
 <form method="POST" action="/grow_rooms/<%= @grow_room.id %>">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
-
-<select name="user_id">
-    <% @users.each do |user| %>
-        <option value="<%= user.id%>"> <%= user.name %> </option>
-    <% end %>
-</select>
-<h3>Grow Room ID: <input type="text" name="grow_room_id" value="@grow_room.grow_room_id"></h3>
+<label>Name: </label><select name="user_id">
+        <% @users.each do |user| %>
+            <option value="<%= user.id%>"> <%= user.name %> </option>
+        <% end %>
+    </select>
+<br>
+<br>
+    <label>Name of Grow Room: </label><input type="text" name="name"><br />
+<br> 
+<br>   
+    <label>Light Source: </label><select name="type_of_light">
+        <option value="Fluorescent">Fluorescent</option>
+        <option value="High Intensity Discharge">High Intensity Discharge</option>
+        <option value="LED">LED</option>
+    </select>
+<br>
+<br>
+    <label>Room Temperature: </label><select name="room_temperature">
+        <option value="70">70 degrees Fahrenheit</option>
+        <option value="71">71 degrees Fahrenheit</option>
+        <option value="72">72 degrees Fahrenheit</option>
+        <option value="73">73 degrees Fahrenheit</option>
+        <option value="74">74 degrees Fahrenheit</option>
+        <option value="75">75 degrees Fahrenheit</option>
+        <option value="76">76 degrees Fahrenheit</option>
+        <option value="77">77 degrees Fahrenheit</option>
+        <option value="78">78 degrees Fahrenheit</option>
+    </select>
+    <br>
+    <br>
+      <label>Relative Humidity: </label><select name="relative_humidity">
+        <option value="45">45%</option>
+        <option value="46">46%</option>
+        <option value="47">47%</option>
+        <option value="48">48%</option>
+        <option value="49">49%</option>
+        <option value="50">50%</option>
+        <option value="51">51%</option>
+        <option value="52">52%</option>
+        <option value="53">53%</option>
+        <option value="54">54%</option>
+        <option value="55">55%</option>
+    </select>
+    <br>
+    <br>
 <input type="submit">
 </form>
+</html>

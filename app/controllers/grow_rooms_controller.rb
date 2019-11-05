@@ -1,60 +1,61 @@
 class GrowRoomsController < ApplicationController
 
-    get '/grow_room' do
+    get '/grow_rooms' do
         if logged_in?
-            @grow_room = Grow_Room.all
-            erb :"grow_room/index"
+            @grow_room = GrowRoom.all
+            erb :"grow_rooms/index"
         else
             redirect "/login"
         end
     end
 
-    get '/grow_room/new' do
+    get '/grow_rooms/new' do
         @users = User.all
-        erb :"grow_room/new"
+        erb :"grow_rooms/new"
     end
 
-    get '/grow_room/:id/edit' do
+    get '/grow_rooms/:id/edit' do
         @users = User.all
-        @grow_room = Grow_Room.find_by_id(params[:id])
+        @grow_room = GrowRoom.find_by_id(params[:id])
         if @grow_room.user.id == current_user.id
-            erb :"grow_room/edit"
+            erb :"grow_rooms/edit"
         else
-            redirect "/grow_room"
+            redirect "/grow_rooms"
         end
     end
 
-    patch '/grow_room/:id' do
-        @grow_room = Grow_Room.find_by_id(params[:id])
+    patch '/grow_rooms/:id' do
+        @grow_room = GrowRoom.find_by_id(params[:id])
         params.delete("_method")
+        params
         if @grow_room.update(params)
-            redirect "/grow_room/#{@grow_room.id}"
+            redirect "/grow_rooms/#{@grow_room.id}"
         else
-            redirect "/grow_room/#{@grow_room.id}/edit"
+            redirect "/grow_rooms/#{@grow_room.id}/edit"
         end
     end
 
-    get '/grow_room/:id' do
-       @grow_room = Grow_Room.find_by_id(params[:id])
-       erb :"grow_room/show"
+    get '/grow_rooms/:id' do
+       @grow_room = GrowRoom.find_by_id(params[:id])
+       erb :"grow_rooms/show"
     end
 
-    post '/grow_room' do
-        @grow_room = Grow_Room.new(params)
-            if @grow_room.save
-                redirect "/grow_room/#{@grow_room.id}"
+    post '/grow_rooms' do
+        grow_room = GrowRoom.new(params)
+            if grow_room.save
+                redirect "/grow_rooms/#{grow_room.id}"
             else
-                redirect "/grow_room/new"
+                redirect "/grow_rooms/new"
             end
     end
 
-    delete '/grow_room/:id' do
-        @grow_room = Grow_Room.find_by_id(params[:id])
+    delete '/grow_rooms/:id' do
+        @grow_room = GrowRoom.find_by_id(params[:id])
         if @grow_room.user.id == current_user.id
             @grow_room.delete
-            redirect "/grow_room"
+            redirect "/grow_rooms/new"
         else
-            redirect "/grow_room"
+            redirect "/grow_rooms/#{grow_room.id}"
         end
     end  
 end

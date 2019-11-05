@@ -6,16 +6,25 @@
 <br>
 <h3>Hello <%= @user.name %>!</h3>
 <br>
-<p>Whether you are are seeking to improve the quality or quantity of your cannabis growth, we have you covered.</p>
+<p>Whether you are seeking to improve the quality or quantity of your cannabis growth, we have you covered.</p>
 <p>From planting your cannabis seeds to tending them through harvest, DreamTech offers 24/7 botanical care with our state of the art cannabis production and processing equipment to ensure maximum results.</p>
 <p>With our customizable production model, you have as much control as you would like in the planting, tending, and harvesting processes to produce the cannabis of your dreams, all at the convenience of our website!</p>
 <br>
 </body>
 <div>
-<p>To get started, simply <a href="/cannabis_plants/new">click here to select the cannabis seeds</a> that you would like to grow!</p>
+<p>Next Step: To get started, simply <a href="/cannabis_plants/new">click here to select the cannabis seeds</a> that you would like to grow!</p>
 </div>
 <br>
-<p>Would you like to delete your user account? This cannot be undone.</p>
+<br>
+<div>
+<p>To see your existing cannabis plant(s) and/or growing room(s), <a href="/users/<%=@user.id%>/garden">click here to view your cannabis production</a> with DreamTech!</p>
+</div>
+<br>
+<br>
+<div>
+<p><a href="/users/<%=@user.id%>/edit">Edit My Profile</a></p>
+</div>
+<br>
 <form method="POST" action="/users/<%=@user.id%>">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete My Account">

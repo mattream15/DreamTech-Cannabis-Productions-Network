@@ -1,12 +1,51 @@
-<h1>Edit Your Cannabis Plant</h1>
+<html>
+    <center><h1>DreamTech</h1></center>
+    <center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
+    <br>
+<h4>Edit Your Cannabis Plant</h4>
+<br>
 <form method="POST" action="/cannabis_plants/<%= @cannabis_plant.id %>">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
-
-<select name="user_id">
-    <% @users.each do |user| %>
-        <option value="<%= user.id%>"> <%= user.name %> </option>
-    <% end %>
-</select>
-<h3>Cannabis Plant ID: <input type="text" name="cannabis_plant_id" value="@cannabis_plant.cannabis_plant_id"></h3>
+ <label>Name: </label><select name="user_id">
+        <% @users.each do |user| %>
+            <option value="<%= user.id%>"> <%= user.name %> </option>
+        <% end %>
+    </select>
+<br>
+<br>
+    <label>Strain: </label><select name="strain">
+        <option value="Cannabis indica - Strawberry Banana">Cannabis indica - "Strawberry Banana"</option>
+        <option value="Cannabis indica - Dark Star">Cannabis indica - "Dark Star"</option>
+        <option value="Cannabis indica - Kosher Kush">Cannabis indica - "Kosher Kush"</option>
+        <option value="Cannabis indica - Sunset Sherbert">Cannabis indica - "Sunset Sherbert"</option>
+        <option value="Cannabis indica - Purple Kush">Cannabis indica - "Purple Kush"</option>
+        <option value="Cannabis sativa - Ghost Train Haze">Cannabis sativa - "Ghost Train Haze"</option>
+        <option value="Cannabis sativa - Maui Wowie">Cannabis sativa - "Maui Wowie"</option>
+        <option value="Cannabis sativa - Sour Diesel">Cannabis sativa - "Sour Diesel"</option>
+        <option value="Cannabis sativa - Blue Dream">Cannabis sativa - "Blue Dream"</option>
+        <option value="Cannabis sativa - Casey Jones">Cannabis sativa - "Casey Jones"</option>
+    </select>
+<br>
+<br>
+    <label>Number of Seeds: </label><input type="text" name="number_of_cannabis_seeds">
+    <br>
+    <br>
+    <label>Soil Type: </label><select name="soil_type">
+        <option value="Fox Farm Happy Frog Potting Soil">Fox Farm Happy Frog Potting Soil</option>
+        <option value="Super Soft Organic Concentrate">Super Soft Organic Concentrate</option>
+        <option value="Mother Earth Coco plus Perlite Mix">Mother Earth Coco plus Perlite Mix</option>
+        <option value="Big Rootz All-Purpose Potting Soil">Big Rootz All-Purpose Potting Soil</option>
+    </select>
+    <br>
+    <br>
+    <label>Nutrients: </label><select name="nutrients">
+        <option value="TechnaFlora Recipe For Success Nutrient Bundle">TechnaFlora Recipe For Success Nutrient Bundle</option>
+        <option value="Fox Farm FX14049 Liquid: Big Bloom, Grow Big, Tiger Bloom">Fox Farm FX14049 Liquid: Big Bloom, Grow Big, Tiger Bloom</option>
+        <option value="General Hydroponics General Organics Go Box">General Hydroponics General Organics Go Box</option>
+        <option value="Botanicare PURE BLEND PRO Grow + PURE BLEND PRO Bloom">Botanicare PURE BLEND PRO Grow + PURE BLEND PRO Bloom</option>
+    </select>
+    <br>
+    <br>
 <input type="submit">
 </form>
+</html>

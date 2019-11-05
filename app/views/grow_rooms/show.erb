@@ -1,9 +1,34 @@
-<h1>Grow Room Information for <%= @grow_room.user_id %>:</h1>
-<h3>Name: <%= @grow_room.user_id %></h3>
-<h3>Grow Room ID: <%= @grow_room.grow_room_id %></h3>
-
-<h2>Would you like to delete this grow room?</h2>
+<html>
+<center><h1>DreamTech</h1></center>
+<center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
+<br>
+<body>
+<h4>Grow Room Name: <%= @grow_room.name %></h4>
+<br>
+<h4>Selected Grow Room Light Source: <%= @grow_room.type_of_light %></h4>
+<br>
+<h4>Room Temperature: <%= @grow_room.room_temperature %> degrees Fahrenheit</h4>
+<br>
+<h4>Selected Soil Type: <%= @grow_room.relative_humidity %></h4>
+</body>
+<br>
+<br>
+<div>
+<p>Final Step: To check on your cannabis plant(s) and growing room(s), simply <a href="/users/<%=@grow_room.user.id%>/garden">click here to view your cannabis production</a> with DreamTech!</p>
+</div>
+<br>
+<br>
+<div>
+<p>Would you like to build another grow room? <a href="/grow_rooms/new">Click here to select the growing room</a> that you would like use to produce your cannabis!</p>
+</div>
+<br>
+<br>
+<div>
+<p><a href="/grow_rooms/<%=@grow_room.id%>/edit">Edit My Grow Room</a></p>
+</div>
+<br>
 <form method="POST" action="/grow_rooms/<%=@grow_room.id%>">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete">
+    <input type="submit" value="Delete Grow Room">
 </form>
+</html>

@@ -7,6 +7,15 @@ class UsersController < ApplicationController
     get '/users/login' do
         erb :"sessions/login"
     end
+
+    get '/users/:id/garden' do
+        @user = User.find_by_id(params[:id])
+        if @user.id == current_user.id
+            erb :"/users/garden"
+        else
+            redirect "/login"
+        end
+    end
           
     post '/users' do
         @user = User.new(params)
@@ -21,7 +30,7 @@ class UsersController < ApplicationController
     get '/users/:id/edit' do
         @user = User.find_by_id(params[:id])
         if @user.id == current_user.id
-            erb :"/users/#{@user.id}/edit"
+            erb :"/users/edit"
         else
             redirect "/login"
         end

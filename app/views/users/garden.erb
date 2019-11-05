@@ -1,0 +1,42 @@
+<html>
+    <center><h1>DreamTech</h1></center>
+    <center><h3> ~ The Sky Is Just The Beginning ~ </h3></center>
+    <br>
+    <div>
+    <h3>Hello <%= @user.name %>! Here is your garden:</h3>
+    <br>
+    <br>
+<div>
+    <h4>Your Cannabis Plant(s)</h4>
+    <br>
+    <% @user.cannabis_plants.each do |cannabis_plant| %>
+        <h5>Selected Cannabis Species and Variety Name: "<%= cannabis_plant.strain %>"</h5>
+        <h5>Number of Cannabis Seeds: <%= cannabis_plant.number_of_cannabis_seeds %></h5>
+        <h5>Selected Soil Type: "<%= cannabis_plant.soil_type %>"</h5>
+        <h5>Selected Nutrients: "<%= cannabis_plant.nutrients %>"</h5>
+<br>
+    <% end %>
+</div>
+<br>
+<br>
+<div>
+    <h4>Your Grow Room(s)</h4>
+<br>
+    <% @user.grow_rooms.each do |grow_room| %>
+        <h5>Grow Room Name: <%= grow_room.name %></h5>
+        <h5>Selected Grow Room Light Source: <%= grow_room.type_of_light %></h5>
+        <h5>Room Temperature: <%= grow_room.room_temperature %> degrees Fahrenheit</h5>
+        <h5>Selected Soil Type: <%= grow_room.relative_humidity %></h5>
+        <br>
+    <% end %>
+</div>
+<br>
+<br>
+<div>
+    <p>Would you like to plant more cannabis? <a href="/cannabis_plants/new">Click here to select the cannabis seeds</a> that you would like to grow!</p>
+</div>
+<br>
+<div>
+<p>Would you like to build another grow room? <a href="/grow_rooms/new">Click here to select the growing room</a> that you would like use to produce your cannabis!</p>
+</div>
+</html>
